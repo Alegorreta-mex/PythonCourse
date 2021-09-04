@@ -18,5 +18,5 @@ else:
 for i in range(5):
     if i % 2 == 0:
         print("{} es par".format(i))
-        continue
-    print("{} es impar".format(i))
+    elif i % 2 != 0:
+        print("{} es impar".format(i))
