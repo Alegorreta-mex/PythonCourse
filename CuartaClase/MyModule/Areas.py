@@ -1,4 +1,9 @@
-from .Constants import PI
+# from .Constants import PI
+from math import sqrt
+
+
+def get_perimeter(width, height):
+    return (2 * width) + (2 * height)
 
 
 class Rectangulo():
@@ -6,15 +11,16 @@ class Rectangulo():
         self.height = heigth
         self.width = width
 
-    def get_perimeter(self):
-        return (2 * self.width) + (2 * self.height)
+    @staticmethod
+    def get_perimeter(width, height):
+        return (2 * width) + (2 * height)
 
     def get_area(self):
         return self.width * self.height
 
 
 class Circulo():
-    pi = PI
+    pi = 3.14
 
     def __init__(self, radius):
         self.radius = radius
@@ -29,17 +35,35 @@ class Circulo():
 class Triangulo():
     pass
 
+
 class Rombo():
-    pass
+    def __init__(self, heigth, width):
+        self.height = heigth
+        self.width = width
+
+    def get_perimeter(self):
+        return (2 * self.width) + (2 * self.height)
+
+    def get_area(self):
+        cateto1 = self.width / 2
+        cateto2 = self.height / 2
+        cateto1_pow = pow(cateto1, 2)
+        cateto2_pow = pow(cateto2, 2)
+        a = sqrt(cateto1_pow + cateto2_pow)
+        return a * 4
+
 
 
 class Trapecio():
     pass
 
+
 class Palalerogramo():
     pass
+
 
 class NAgono():
     pass
 
 
+print(get_perimeter(5, 6))
